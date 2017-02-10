@@ -53,8 +53,7 @@ public class VotingMachine {
 	}
 
 	public String getCounts(){
-		return Integer.toString(democratCount) + ", "
-				+ Integer.toString(republicanCount);
+		return Integer.toString(democratCount) + ", " + Integer.toString(republicanCount);
 	}
 	//End methods
 
