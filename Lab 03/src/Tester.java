@@ -66,5 +66,23 @@ public class Tester {
 		
 		System.out.println("VotingMaching check ... done");
 		
+		System.out.println("Start Student check ...");
+		
+		Student steven = new Student("Steven");
+				
+		System.out.print("Enter amount of quizes: ");
+		int quizAmount = in.nextInt();
+		int tempVar = 0;
+		
+		System.out.println(steven.getTotalScore());
+		for (int j = 0; j < quizAmount; j++){
+			System.out.println("Enter quiz grade: ");
+			tempVar = in.nextInt();
+			steven.addQuiz(tempVar);
+		}
+		System.out.println(steven.getTotalScore());
+		System.out.println(steven.getAverageScore());
+		
+		System.out.println("Student check ... done");
 	}
 }
