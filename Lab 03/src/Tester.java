@@ -43,7 +43,28 @@ public class Tester {
 		
 		System.out.println("Address check ... done");
 		
+		System.out.println("Start VotingMachine check ...");
 		
+		
+		VotingMachine poll = new VotingMachine();
+		
+		System.out.println("Enter amount of dem votes");
+		int demVotes = in.nextInt();
+		System.out.println("Enter amount of rep votes");
+		int repVotes = in.nextInt();
+		
+		for(int i = 0; i < demVotes; i++){
+			poll.voteDem();
+		}
+		for(int i = 0; i < repVotes; i++){
+			poll.voteRep();
+		}
+		
+		System.out.println(poll.getCounts());
+		poll.clearState();
+		System.out.println(poll.getCounts());
+		
+		System.out.println("VotingMaching check ... done");
 		
 	}
 }
