@@ -8,22 +8,29 @@ import java.util.ArrayList;
 public class Mailbox {
 
 	private ArrayList<Message> storage;
-	private String signature;
+	private final String SIGNATURE;
 
 	//Constructors
 	public Mailbox(String signature){
-		this.signature = signature;
+		this.SIGNATURE = signature;
+		storage = new ArrayList<Message>();
 	}
 	//End constructors
 
 	//Start Methods
 	public void addMessage(Message m){
-		m.append(signature);
+		m.append(SIGNATURE);
 		storage.add(m);
 	}
 
-	public Message getMessage(int i){
-		return storage.get(i);
+	public Message getMessage(int i) throws IndexOutOfBoundsException{
+		try{
+			return storage.get(i);
+		}
+		catch(IndexOutOfBoundsException exception){
+			System.out.println("Index out of bounds!");
+		}
+		return null;
 	}
 	
 	public void removeMessage(int i){

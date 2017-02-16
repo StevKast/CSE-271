@@ -9,7 +9,7 @@ public class Message {
 	private String receiver;
 	private String message;
 	private static final String FROM = "From: ";
-	private static final String TO = "\nTo ";
+	private static final String TO = "\nTo: ";
 	
 	//Constructor
 	public Message(String sender, String receiver){
