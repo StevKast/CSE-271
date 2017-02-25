@@ -6,11 +6,12 @@
 public class Instructor extends Person{
 	private int salary;
 	
-	//constructors
-	public Instructor(int salary, String name, int yearOfBirth){
+	//Constructors
+	public Instructor(String name, int yearOfBirth, int salary){
 		super(name, yearOfBirth);
 		this.salary = salary;
 	}
+	//End constructors
 
 	public int getSalary() {
 		return salary;
@@ -21,6 +22,6 @@ public class Instructor extends Person{
 	}
 	
 	public String toString(){
-		return getName() + getYearOfBirth() + salary;
+		return super.toString() + "\nSalary: " + salary;
 	}
 }

@@ -18,7 +18,8 @@ public class MailboxTester {
 		
 		box.removeMessage(0);
 		
-		System.out.println();
+		System.out.println("---Expected---\nIndex out of bounds!\nnull");
+		System.out.println("---Actual---");
 		System.out.println(box.getMessage(0));
 		
 		

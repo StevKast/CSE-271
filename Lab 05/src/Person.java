@@ -12,11 +12,6 @@ public class Person {
 		this.name = name;
 		yearOfBirth = year;
 	}
-	
-	public Person(){
-		this.name = getName();
-		this.yearOfBirth = getYearOfBirth();
-	}
 
 	public String getName() {
 		return name;
@@ -35,6 +30,6 @@ public class Person {
 	}
 	
 	public String toString(){
-		return getName() + getYearOfBirth();
+		return "Name: " + getName() + "\nYear: " + getYearOfBirth();
 	}
 }

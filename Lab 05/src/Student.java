@@ -7,10 +7,12 @@ public class Student extends Person{
 	
 	private String major;
 	
-	public Student(String major, String name, int yearOfBirth){
+	//Constructors
+	public Student(String name, int yearOfBirth, String major){
 		super(name, yearOfBirth);
 		this.major = major;
 	}
+	//End constructors
 
 	public String getMajor() {
 		return major;
@@ -21,6 +23,6 @@ public class Student extends Person{
 	}
 	
 	public String toString(){
-		return getName() + getYearOfBirth() + major;
+		return super.toString() + "\nMajor: " + major;
 	}
 }
