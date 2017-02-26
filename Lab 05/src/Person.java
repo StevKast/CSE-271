@@ -6,7 +6,7 @@
 public class Person {
 	private String name;
 	private int yearOfBirth;
-	
+
 	//Constructors
 	public Person(String name, int year){
 		this.name = name;
@@ -18,7 +18,7 @@ public class Person {
 	}
 
 	public void setName(String name) {
-		this.name = name;
+			this.name = name;
 	}
 
 	public int getYearOfBirth() {
@@ -26,10 +26,12 @@ public class Person {
 	}
 
 	public void setYearOfBirth(int yearOfBirth) {
-		this.yearOfBirth = yearOfBirth;
+		if(yearOfBirth >= 0){
+			this.yearOfBirth = yearOfBirth;
+		}
 	}
-	
+
 	public String toString(){
-		return "Name: " + getName() + "\nYear: " + getYearOfBirth();
+		return "Name: " + getName() + " Year: " + getYearOfBirth();
 	}
 }

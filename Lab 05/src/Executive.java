@@ -24,7 +24,7 @@ public class Executive extends Manager{
 	//End getters and setters
 	
 	public String toString(){
-		return super.toString() + getOffice();
+		return super.toString() + " Office: " + getOffice();
 	}
 	
 

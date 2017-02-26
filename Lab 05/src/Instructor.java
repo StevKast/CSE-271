@@ -5,7 +5,7 @@
 
 public class Instructor extends Person{
 	private int salary;
-	
+
 	//Constructors
 	public Instructor(String name, int yearOfBirth, int salary){
 		super(name, yearOfBirth);
@@ -18,10 +18,12 @@ public class Instructor extends Person{
 	}
 
 	public void setSalary(int salary) {
-		this.salary = salary;
+		if(salary >= 0){
+			this.salary = salary;
+		}
 	}
-	
+
 	public String toString(){
-		return super.toString() + "\nSalary: " + salary;
+		return super.toString() + " Salary: " + salary;
 	}
 }

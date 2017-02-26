@@ -24,7 +24,7 @@ public class Manager extends Employee{
 	//End getters and setters
 	
 	public String toString(){
-		return super.toString() + getDepartment();
+		return super.toString() + " Department: " + getDepartment();
 	}
 	
 	

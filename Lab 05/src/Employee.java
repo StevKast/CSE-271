@@ -6,7 +6,7 @@
 public class Employee {
 	private String name;
 	private int salary;
-	
+
 	//Constructors
 	public Employee(String name, int salary) {
 		this.name = name;
@@ -28,13 +28,15 @@ public class Employee {
 	}
 
 	public void setSalary(int salary) {
-		this.salary = salary;
+		if(salary >= 0){
+			this.salary = salary;
+		}
 	}
 	//End getters and setter
-	
+
 	public String toString(){
-		return getName() + getSalary();
+		return "Name: " + getName() + " Salary: " + getSalary();
 	}
-	
-	
+
+
 }

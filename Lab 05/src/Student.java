@@ -23,6 +23,6 @@ public class Student extends Person{
 	}
 	
 	public String toString(){
-		return super.toString() + "\nMajor: " + major;
+		return super.toString() + " Major: " + major;
 	}
 }
