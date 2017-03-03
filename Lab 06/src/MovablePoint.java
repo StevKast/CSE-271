@@ -53,7 +53,7 @@ public class MovablePoint implements Movable {
 	
 	@Override
 	public String toString(){
-		return "x = " + x + " xSpeed = " + xSpeed + " y = " + y + " ySpeed = " + ySpeed;
+		return "(x,y) = " + "(" + x + ", " + y + ")" + " xSpeed = " + xSpeed + " ySpeed = " + ySpeed;
 	}
 
 }

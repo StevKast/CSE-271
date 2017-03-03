@@ -37,6 +37,6 @@ public class MovableCircle implements Movable {
 
 	@Override
 	public String toString() {
-		return "MovableCircle [center= " + center + ", radius= " + radius + "]";
+		return center.toString() + " radius = " + radius;
 	}
 }

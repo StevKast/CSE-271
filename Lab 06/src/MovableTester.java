@@ -7,7 +7,7 @@ public class MovableTester {
 		m1.moveLeft();
 		System.out.println(m1);
 		Movable m2 = new MovableCircle(2, 1, 2, 20,50); // upcast. Constructor takes in 4 point values and
-		//radius
+														//radius
 		System.out.println(m2);
 		m2.moveRight();
 		System.out.println(m2);
