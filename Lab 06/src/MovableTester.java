@@ -12,11 +12,21 @@ public class MovableTester {
 		m2.moveRight();
 		System.out.println(m2);
 		
-		Movable[] mArray = {m1, m2};
+		Movable m3 = new MovablePoint(0, 0, 1, 1);
+		Movable m4 = new MovableCircle(0, 0, 1, 1, 5);
+		Movable[] mArray = {m3, m4};
 		chaChaSlide(mArray);
 		
-		System.out.println("\n" + m1);
-		System.out.println(m2);
+		System.out.println("\nExpected:");
+		System.out.println("(x,y) = (-1.0, 1.0) xSpeed = 1.0 ySpeed = 1.0");
+		System.out.println("(x,y) = (-1.0, 1.0) xSpeed = 1.0 ySpeed = 1.0 radius = 5");
+		
+		System.out.println("Actual:\n" + m3 + "\n" + m4);
+		
+		m3.moveRight();
+		m3.moveDown();
+		System.out.println("\nExpected:\n(x,y) = (0.0, 0.0) xSpeed = 1.0 ySpeed = 1.0");
+		System.out.println("Actual:\n" + m3);
 	}
 
 	public static void chaChaSlide(Movable[] movable){
