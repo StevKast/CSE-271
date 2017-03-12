@@ -1,0 +1,12 @@
+Daily 2017 3 14
+A daily event, Lunch with xxx
+Monthly 2017 3 14
+A monthly event, pay Netflix subscription
+Onetime 2017 3 14
+A onetime event, turn in Project 01
+Daily 2017 4 20
+A daily event, wake up
+Monthly 2017 4 20
+A monthly event, meeting with Exec
+Onetime 2017 4 20
+A onetime event, file taxes
