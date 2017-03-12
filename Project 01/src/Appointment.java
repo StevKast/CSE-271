@@ -14,7 +14,8 @@ public class Appointment {
 		this.desc = desc;
 		this.date = date;
 	}
-
+	
+	//Getters and setters
 	public String getDesc() {
 		return desc;
 	}
@@ -30,5 +31,13 @@ public class Appointment {
 	public void setDate(GregorianCalendar date) {
 		this.date = date;
 	}
+	//end Getters and setters
 	
+	public boolean occursOn(int year, int month, int day){
+		return true; //Placeholder for implementation
+	}
+	
+	public appointmentType getType(Appointment app){
+		return null; //Placeholder for implementation
+	}
 }
