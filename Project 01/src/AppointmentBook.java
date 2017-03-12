@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class AppointmentBook {
 	
-	private ArrayList<Appointment> stor = new ArrayList<Appointment>();
+	private ArrayList<Appointment> stor = new ArrayList<Appointment>(); //Assuming ArrayList would work better than an array
 	
 	public AppointmentBook(File file){
 		//No instance vars
