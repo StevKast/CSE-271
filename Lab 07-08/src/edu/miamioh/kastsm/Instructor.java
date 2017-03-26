@@ -8,7 +8,7 @@ public class Instructor extends Person{
 	private ArrayList<Course> courses = new ArrayList<Course>();
 	
 	/**
-	 * Constructs an Instructor object.
+	 * Constructs an Instructor object with an outside list of courses being taught.
 	 * @param id Instructors ID number.
 	 * @param email Instructors email address.
 	 * @param salary Instructors salary.
@@ -18,6 +18,17 @@ public class Instructor extends Person{
 		super(id, email);
 		this.salary = salary;
 		this.courses = courses;
+	}
+	
+	/**
+	 * Constructs an Instructor object.
+	 * @param id Instructors ID number.
+	 * @param email Instructors email address.
+	 * @param salary Instructors salary.
+	 */
+	public Instructor(int id, String email, int salary) {
+		super(id, email);
+		this.salary = salary;
 	}
 	
 	/**
@@ -71,6 +82,14 @@ public class Instructor extends Person{
 			temp += course.toString() + "\n";
 		}
 		return temp;
+	}
+	
+	/**
+	 * Adds a course to the list of courses being taught.
+	 * @param course Course to be added to the list.
+	 */
+	public void addCourse(Course course){
+		courses.add(course);
 	}
 	
 }

@@ -10,7 +10,7 @@ public class Course {
 	
 	
 	/**
-	 * Constructs a Course object.
+	 * Constructs a Course object with an outside list of students.
 	 * @param instructor Instructor of course.
 	 * @param hall Lecture hall that course will be taught.
 	 * @param roster List of students in the course.
@@ -19,6 +19,16 @@ public class Course {
 		this.instructor = instructor;
 		this.hall = hall;
 		this.roster = roster;
+	}
+	
+	/**
+	 * Constructs a Course object.
+	 * @param instructor Instructor of course.
+	 * @param hall Lecture hall that course will be taught.
+	 */
+	public Course(Instructor instructor, LectureHall hall){
+		this.instructor = instructor;
+		this.hall = hall;
 	}
 
 	/**
@@ -82,7 +92,7 @@ public class Course {
 	 */
 	@Override
 	public String toString() {
-		return "Course: instructor=" + instructor + ", hall=" + hall + ";";
+		return "Course: instructor:" + instructor.getId() + ", hall:" + hall.getName() + ";";
 	}
 	
 	
