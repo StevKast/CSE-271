@@ -3,6 +3,7 @@ package edu.miamioh.kastsm;
 public class Tester {
 
 	public static void main(String[] args){
+		
 		AdminStaff admin = new AdminStaff(101, "admin@unv.edu", 60000);
 		Instructor instructor = new Instructor(102, "instructor@unv.edu", 50000);
 		Student student = new Student(103, "student@unv.edu", "software", 3.9);
