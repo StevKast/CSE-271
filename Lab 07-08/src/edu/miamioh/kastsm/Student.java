@@ -24,6 +24,19 @@ public class Student extends Person{
 	}
 	
 	/**
+	 * Constructs a Student object.
+	 * @param id Students ID number.
+	 * @param email Students email address.
+	 * @param major Students major.
+	 * @param GPA Students grade point average.
+	 */
+	public Student(int id, String email, String major, double GPA) {
+		super(id, email);
+		this.major = major;
+		this.GPA = GPA;
+	}
+	
+	/**
 	 * Returns the students major.
 	 * @return students major.
 	 */

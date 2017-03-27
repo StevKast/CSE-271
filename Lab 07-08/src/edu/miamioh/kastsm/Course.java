@@ -4,31 +4,26 @@ import java.util.ArrayList;
 
 public class Course {
 	
-	private Instructor instructor;
-	private LectureHall hall;
+	private Instructor instructor = new Instructor(0, "Temp", 0);
+	private LectureHall hall = new LectureHall("Temp", 0);
 	private ArrayList<Student> roster = new ArrayList<Student>();
 	
-	
 	/**
-	 * Constructs a Course object with an outside list of students.
-	 * @param instructor Instructor of course.
-	 * @param hall Lecture hall that course will be taught.
-	 * @param roster List of students in the course.
-	 */
-	public Course(Instructor instructor, LectureHall hall, ArrayList<Student> roster){
-		this.instructor = instructor;
-		this.hall = hall;
-		this.roster = roster;
-	}
-	
-	/**
-	 * Constructs a Course object.
+	 * Constructs a Course object with preset instructor and lecture hall.
 	 * @param instructor Instructor of course.
 	 * @param hall Lecture hall that course will be taught.
 	 */
 	public Course(Instructor instructor, LectureHall hall){
 		this.instructor = instructor;
 		this.hall = hall;
+	}
+	
+	/**
+	 * Constructs an empty Course object.
+	 */
+	public Course(){
+		instructor = instructor;
+		hall = hall;
 	}
 
 	/**

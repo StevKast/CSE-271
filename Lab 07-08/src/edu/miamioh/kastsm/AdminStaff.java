@@ -57,5 +57,6 @@ public class AdminStaff extends Person{
 	 */
 	public void assignInstructor(Course course, Instructor instructor){
 		course.setInstructor(instructor);
+		instructor.addCourse(course);
 	}
 }
