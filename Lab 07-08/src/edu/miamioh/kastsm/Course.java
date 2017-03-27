@@ -22,8 +22,7 @@ public class Course {
 	 * Constructs an empty Course object.
 	 */
 	public Course(){
-		instructor = instructor;
-		hall = hall;
+		
 	}
 
 	/**
