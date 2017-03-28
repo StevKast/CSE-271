@@ -68,7 +68,7 @@ public class Instructor extends Person{
 	 * @param student Student to be modified.
 	 * @param GPA Value to change the GPA.
 	 */
-	public void modifyGPA(Student student, int GPA){
+	public void modifyGPA(Student student, double GPA){
 		student.setGPA(GPA);
 	}
 	

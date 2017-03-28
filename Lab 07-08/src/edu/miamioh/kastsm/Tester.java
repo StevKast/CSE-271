@@ -6,7 +6,7 @@ public class Tester {
 		
 		AdminStaff admin = new AdminStaff(101, "admin@unv.edu", 60000);
 		Instructor instructor = new Instructor(102, "instructor@unv.edu", 50000);
-		Student student = new Student(103, "student@unv.edu", "software", 3.9);
+		Student student = new Student(103, "student@unv.edu", "software");
 		LectureHall hall1 = new LectureHall("Benton", 44);
 		LectureHall hall2 = new LectureHall("Garland", 100);
 		
@@ -23,10 +23,24 @@ public class Tester {
 		admin.assignInstructor(course3, instructor);
 		admin.assignHall(course3, hall1);
 		
-		System.out.println(course1.toString());
-		System.out.println();
+		instructor.modifyGPA(student, 4.0);
+		System.out.println("Expected: 4.0");
+		System.out.println("Actual: " + student.getGPA() + "\n");
+		
+		System.out.println("Expected:");
+		System.out.println("Course: instructor:102, hall:Benton");
+		System.out.println("Actual:");
+		System.out.println(course1.toString() + "\n");
+		
+		System.out.println("Expected:");
+		System.out.println("Course: instructor:102, hall:Benton;\nCourse: instructor:102, hall:Garland;\n"
+				+ "Course: instructor:102, hall:Benton;");
+		System.out.println("Acutal:");
 		System.out.println(instructor.viewCourses());
 		
+		System.out.println("Expected:");
+		System.out.println("Benton 44");
+		System.out.println("Actual:");
 		System.out.println(hall1.getName() + " " + hall1.getCapacity());
 		
 	}

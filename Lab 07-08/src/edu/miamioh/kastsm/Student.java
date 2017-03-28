@@ -13,27 +13,11 @@ public class Student extends Person{
 	 * @param id Students ID number.
 	 * @param email Students email address.
 	 * @param major Students major.
-	 * @param courses List of courses the student is taking.
-	 * @param GPA Students grade point average.
 	 */
-	public Student(int id, String email, String major, ArrayList<Course> courses, double GPA) {
+	public Student(int id, String email, String major) {
 		super(id, email);
 		this.major = major;
-		this.courses = courses;
-		this.GPA = GPA;
-	}
-	
-	/**
-	 * Constructs a Student object.
-	 * @param id Students ID number.
-	 * @param email Students email address.
-	 * @param major Students major.
-	 * @param GPA Students grade point average.
-	 */
-	public Student(int id, String email, String major, double GPA) {
-		super(id, email);
-		this.major = major;
-		this.GPA = GPA;
+		GPA = 0;
 	}
 	
 	/**
