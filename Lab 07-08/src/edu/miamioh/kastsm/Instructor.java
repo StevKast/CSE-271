@@ -8,7 +8,7 @@ public class Instructor extends Person{
 	private ArrayList<Course> courses = new ArrayList<Course>();
 	
 	/**
-	 * Constructs an Instructor object with an outside list of courses being taught.
+	 * Constructs an Instructor object with an imported list of courses being taught.
 	 * @param id Instructors ID number.
 	 * @param email Instructors email address.
 	 * @param salary Instructors salary.

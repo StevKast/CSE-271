@@ -13,6 +13,7 @@ public class Student extends Person{
 	 * @param id Students ID number.
 	 * @param email Students email address.
 	 * @param major Students major.
+
 	 */
 	public Student(int id, String email, String major) {
 		super(id, email);
@@ -76,6 +77,13 @@ public class Student extends Person{
 		courses.add(course);
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return super.toString() + " " + major + " " + GPA;
+	}
 	
 	
 }
