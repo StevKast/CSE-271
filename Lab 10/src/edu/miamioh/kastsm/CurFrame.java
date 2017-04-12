@@ -2,6 +2,7 @@ package edu.miamioh.kastsm;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
@@ -42,9 +43,15 @@ public class CurFrame extends JFrame {
 		inputPanel = new JPanel();
 		inputPanel.setLayout(new GridLayout(1,3));
 		
-		firstCurrency = new JComboBox();
-		firstCurrency.addItem("Test");
-		secondCurrency = new JComboBox();
+		firstCurrency = new JComboBox<String>();
+		firstCurrency.addItem("(USD) U.S. Dollar");
+		firstCurrency.addItem("(EUR) Euro");
+		firstCurrency.addItem("(GBP) Great Britian Pound");
+
+		secondCurrency = new JComboBox<String>();
+		secondCurrency.addItem("(USD) U.S. Dollar");
+		secondCurrency.addItem("(EUR) Euro");
+		secondCurrency.addItem("(GBP) Great Britian Pound");
 		
 		calc = new JButton("Calculate");
 		
@@ -54,12 +61,19 @@ public class CurFrame extends JFrame {
 		createTitle();
 		
 		outputLabel = new JLabel(Double.toString(output));
+		JLabel outputText = new JLabel("Result: ");
 		
 		inputPanel.add(firstCurrency);
 		inputPanel.add(secondCurrency);
 		inputPanel.add(calc);
 		
-		mainPanel.add(outputLabel, BorderLayout.SOUTH);
+		JPanel outputPanel = new JPanel();
+		outputPanel.setLayout(new GridLayout(1,2));
+		outputPanel.add(outputText);
+		outputPanel.add(outputLabel);
+		
+		
+		mainPanel.add(outputPanel, BorderLayout.SOUTH);
 		mainPanel.add(inputPanel, BorderLayout.CENTER);
 		add(mainPanel);
 		
@@ -74,6 +88,9 @@ public class CurFrame extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent event) {
 			System.out.println("CLICKED");
+			if(firstCurrency.getSelectedItem().equals("(USD) U.S. Dollar")){
+				
+			}
 		}
 		
 	}
