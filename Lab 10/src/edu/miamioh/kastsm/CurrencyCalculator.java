@@ -6,7 +6,9 @@ public class CurrencyCalculator {
 	
 	public static void main(String[] args){
 	
-		JFrame frame = new CurFrame();
-		frame.pack();
+		JFrame part1 = new CurFrame();
+		part1.pack();
+		
+		JFrame part2 = new ColorMenu();
 	}	
 }
