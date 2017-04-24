@@ -2,6 +2,12 @@ package edu.miamioh.kastsm;
 
 import java.util.Arrays;
 
+//Steven Kast, kastsm
+//Dr. Bravo
+//CSE 271 Section F
+//Lab 11
+
+
 public class RecursiveFinder {
 	
 	public static void main(String args[]){
@@ -14,6 +20,12 @@ public class RecursiveFinder {
 		System.out.println(largestElement(testArray3));
 	}
 	
+	
+	/**
+	 * Finds the largest element in the array.
+	 * @param array Input array of integers.
+	 * @return Returns the largest element in the array.
+	 */
 	public static int largestElement(int[] array){		
 		if(array.length == 1){
 			return array[0];
