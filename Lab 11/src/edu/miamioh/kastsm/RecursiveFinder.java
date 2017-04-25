@@ -12,7 +12,7 @@ public class RecursiveFinder {
 	
 	public static void main(String args[]){
 		int[] testArray1 = {1, 2, 5, 4};
-		int[] testArray2 = {-1, 1, -10, 1, 1, 1, 0};
+		int[] testArray2 = {-1, 1, -10, 1, 1, 1, 0, 10 ,10 ,10 ,100};
 		int[] testArray3 = {1000, 3000, Integer.MAX_VALUE, Integer.MIN_VALUE};
 		
 		System.out.println(largestElement(testArray1));
