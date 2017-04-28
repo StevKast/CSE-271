@@ -1,5 +1,9 @@
 package edu.miamioh.kastsm;
 
+//Steven Kast
+//CSE 271, Dr. Bravo
+//Lab 12
+
 import java.util.Arrays;
 
 /**

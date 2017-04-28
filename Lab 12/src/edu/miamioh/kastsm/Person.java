@@ -1,5 +1,9 @@
 package edu.miamioh.kastsm;
 
+//Steven Kast
+//CSE 271, Dr. Bravo
+//Lab 12
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -8,13 +12,22 @@ public class Person implements Comparable{
 
 	String name;
 	
+	/**
+	 * Constructs a person object
+	 * @param name Name of person
+	 */
 	public Person(String name){
 		this.name = name;
 	}
 	
 	@Override
 	public int compareTo(Object per) {
-		return (-1) * per.toString().compareTo(name);
+		return per.toString().compareTo(name);
+	}
+	
+	@Override
+	public String toString() {
+		return name;
 	}
 
 	
@@ -29,23 +42,25 @@ public class Person implements Comparable{
 		}
 		Collections.sort(personList);
 		System.out.println(personList.get(0));
-		System.out.println(personList.get(9));
+		System.out.println(personList.get(personList.size() - 1));
 		System.out.println(personList);
 	}
 	
 	
+	/**
+	 * @return Returns name of person
+	 */
 	public String getName(){
 		return name;
 	}
 	
+	/**
+	 * @param s String to set the name
+	 */
 	public void setName(String s){
 		name = s;
 	}
 
-	@Override
-	public String toString() {
-		return name;
-	}
 	
 	
 }
