@@ -40,10 +40,12 @@ public class Person implements Comparable{
 		for(int i = 0; i < 10; i++){
 			 personList.add(new Person(in.nextLine()));
 		}
+		
 		Collections.sort(personList);
 		System.out.println(personList.get(0));
 		System.out.println(personList.get(personList.size() - 1));
-		System.out.println(personList);
+		
+		in.close();
 	}
 	
 	
