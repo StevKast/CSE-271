@@ -111,11 +111,11 @@ public class MainFrame extends JFrame {
 		JTextArea checkerOutput = new JTextArea();
 		checkerOutput.setBounds(425, 200, 350, 150);
 		contentPane.add(checkerOutput);
-		
+
 		JButton checkSolution = new JButton("Check Solution");
 		checkSolution.setBounds(524, 363, 140, 60);
 		contentPane.add(checkSolution);
-		
+
 		ImageIcon queenIcon = new ImageIcon(MainFrame.class.getResource("Freddie-Mercury.jpg"));
 		ImageIcon badQueenIcon = new ImageIcon(MainFrame.class.getResource("Freddie-Mercury-Angry.jpg"));
 
@@ -130,37 +130,61 @@ public class MainFrame extends JFrame {
 				boolean colCheck = true;
 				boolean diaCheck = true;
 
-				for (int row = 0; row < gridArray.length; row++) {
-					for (int col = 0; col < gridArray[row].length; col++) {
-						if(gridArray[row][col].isSelected()){
-							rowList.add(row);
-							colList.add(col);
-							//Resets the icon in case it was marked from from a
-							//previous check.
-							gridArray[row][col].setIcon(queenIcon);
+				if(queens <= 8){
+					for (int row = 0; row < gridArray.length; row++) {
+						for (int col = 0; col < gridArray[row].length; col++) {
+							if(gridArray[row][col].isSelected()){
+								rowList.add(row);
+								colList.add(col);
+								//Resets the icon in case it was marked from from a
+								//previous check.
+								gridArray[row][col].setIcon(queenIcon);
+							}
 						}
 					}
-				}
-				System.out.println(rowList);
-				System.out.println(colList);
+					System.out.println(rowList);
+					System.out.println(colList);
 
-				checkerOutput.setText("");
-				for(int i = 0; i < rowList.size(); i++){
-					for(int j = 0; j < rowList.size(); j++){
-						if(rowList.get(i).compareTo(rowList.get(j)) == 0 && (i != j)){
-							rowCheck = false;
-							checkerOutput.append("(" + rowList.get(i) + "," + colList.get(i) + ") conflicts with ("
-									+ rowList.get(j) + "," + colList.get(j) + ")\n");
-							gridArray[rowList.get(i)][colList.get(j)].setIcon(badQueenIcon);
-						}
-						if(colList.get(i).compareTo(colList.get(j)) == 0 && (i != j)){
-							colCheck = false;
-							checkerOutput.append("(" + rowList.get(i) + "," + colList.get(i) + ") conflicts with ("
-									+ rowList.get(j) + "," + colList.get(j) + ")\n");
-							gridArray[rowList.get(i)][colList.get(j)].setIcon(badQueenIcon);
+					checkerOutput.setText("");
+					for(int i = 0; i < rowList.size(); i++){
+						for(int j = 0; j < rowList.size(); j++){
+							//Checks for row conflicts
+							if(rowList.get(i).compareTo(rowList.get(j)) == 0 && (i != j)){
+								rowCheck = false;
+								checkerOutput.append("(" + rowList.get(i) + "," + colList.get(i) 
+								+ ") conflicts with (" + rowList.get(j) + "," + colList.get(j)
+								+ ")\n");
+								gridArray[rowList.get(i)][colList.get(j)].setIcon(badQueenIcon);
+							}
+							//Checks for column conflicts
+							if(colList.get(i).compareTo(colList.get(j)) == 0 && (i != j)){
+								colCheck = false;
+								checkerOutput.append("(" + rowList.get(i) + "," + colList.get(i) 
+								+ ") conflicts with (" + rowList.get(j) + "," + colList.get(j)
+								+ ")\n");
+
+								gridArray[rowList.get(i)][colList.get(j)].setIcon(badQueenIcon);
+							}
+							//Check diagonal conflicts using the row and the column deltas
+							if(Math.abs(rowList.get(i) - rowList.get(j)) == 
+									Math.abs(colList.get(i) - colList.get(j)) && (i != j)){
+								diaCheck = false;
+								checkerOutput.append("(" + rowList.get(i) + "," + colList.get(i) 
+								+ ") conflicts with (" + rowList.get(j) + "," + colList.get(j)
+								+ ")\n");
+								System.out.println(rowList.get(i) + " " + colList.get(j));
+								gridArray[rowList.get(i)][colList.get(i)].setIcon(badQueenIcon);
+
+							}
 						}
 					}
+					if(rowCheck && colCheck && diaCheck){
+						checkerOutput.setText("THAT IS CORRECT!");
+					}
+				}else{
+					checkerOutput.setText("Please use only 8 or less queens!");
 				}
+				
 			}
 		};
 		checkSolution.addActionListener(checkListener);
