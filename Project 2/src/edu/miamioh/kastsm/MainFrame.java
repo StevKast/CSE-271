@@ -1,8 +1,7 @@
 package edu.miamioh.kastsm;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -14,26 +13,16 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.FlowLayout;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.border.LineBorder;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.ListSelectionModel;
 import javax.swing.JButton;
-import java.awt.Component;
-import javax.swing.Box;
 import java.awt.Dimension;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.Rectangle;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-import java.awt.SystemColor;
-import javax.swing.JTextPane;
 import javax.swing.JTextArea;
-import javax.swing.JScrollBar;
+
 
 public class MainFrame extends JFrame {
 
