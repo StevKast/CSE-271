@@ -191,16 +191,16 @@ public class MainFrame extends JFrame {
 
 				for (int row = 0; row < gridArray.length; row++) {
 					for (int col = 0; col < gridArray[row].length; col++) {
-						//Reference console output, user won't see this
+						// ** Reference console output, user won't see this
 						if (gridArray[row][col] == selectedButton) {
 							if (selectedButton.isSelected()) {
 								selectedButton.setIcon(queenIcon);
-								System.out.printf("Selected row and column: (%d, %d)%n", row + 1, col + 1);
+								System.out.printf("Selected row and column: (%d, %d)%n", row + 1, col + 1); // **
 								queens++;
 								currentQueens.setText(Integer.toString(queens));
 							} else {
 								selectedButton.setIcon(null);
-								System.out.printf("Deselected row and column: (%d, %d)%n", row + 1, col + 1);
+								System.out.printf("Deselected row and column: (%d, %d)%n", row + 1, col + 1);// **
 								queens--;
 								currentQueens.setText(Integer.toString(queens));
 							}
