@@ -62,12 +62,14 @@ public class MainFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		//Welcome title for main panel
 		JLabel welcomeTitle = new JLabel("N-Queens Problem Tool");
 		welcomeTitle.setBounds(5, 5, 784, 27);
 		welcomeTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(welcomeTitle);
 		welcomeTitle.setFont(new Font("Tahoma", Font.PLAIN, 22));
 
+		//Creates the panel with a grid layout for the chess board
 		JPanel boardGrid = new JPanel();
 		boardGrid.setBounds(new Rectangle(5, 32, 400, 400));
 		boardGrid.setPreferredSize(new Dimension(400, 400));
@@ -90,24 +92,35 @@ public class MainFrame extends JFrame {
 		countPanel.add(currentQueens);
 		currentQueens.setColumns(2);
 
+		//Creates a text displaying the instructions
 		JTextArea instructionTextArea = new JTextArea();
-		instructionTextArea.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		instructionTextArea.setText("Welcome to the N-Queens Problem tool.\r\n- Place queens by clicking on squares, get rid \r\n   of them by clicking again\r\n- Queens cannot be in the same row, column,\r\n   or diagonal.\r\n- Check your answer by clicking the check \r\n   solution button");
 		instructionTextArea.setEditable(false);
+		instructionTextArea.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		instructionTextArea.setText("Welcome to the N-Queens Problem tool.\r\n-"
+				+ " Place queens by clicking on squares, get rid \r\n"
+				+ "   of them by clicking again\r\n- Queens cannot be in the same row, "
+				+ "column,\r\n   or diagonal.\r\n- Check your answer by clicking the check \r\n   "
+				+ "solution button");
 		instructionTextArea.setBounds(425, 40, 350, 150);
 		contentPane.add(instructionTextArea);
 
+		//Creates a text area displaying current game information
 		JTextArea checkerOutput = new JTextArea();
+		checkerOutput.setLineWrap(true);
+		checkerOutput.setEditable(false);
 		checkerOutput.setBounds(425, 200, 350, 150);
 		contentPane.add(checkerOutput);
 
+		//Creates button to check solution
 		JButton checkSolution = new JButton("Check Solution");
-		checkSolution.setBounds(524, 363, 140, 60);
+		checkSolution.setBounds(435, 372, 140, 60);
 		contentPane.add(checkSolution);
 
+		//Image icon objects for queens
 		ImageIcon queenIcon = new ImageIcon(MainFrame.class.getResource("Freddie-Mercury.jpg"));
 		ImageIcon badQueenIcon = new ImageIcon(MainFrame.class.getResource("Freddie-Mercury-Angry.jpg"));
 
+		//Actions listener for check soultion button
 		ActionListener checkListener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
@@ -131,26 +144,24 @@ public class MainFrame extends JFrame {
 							}
 						}
 					}
-					System.out.println(rowList);
-					System.out.println(colList);
-
+					//Clear text from previous output
 					checkerOutput.setText("");
 					for(int i = 0; i < rowList.size(); i++){
 						for(int j = 0; j < rowList.size(); j++){
 							//Checks for row conflicts
 							if(rowList.get(i).compareTo(rowList.get(j)) == 0 && (i != j)){
 								rowCheck = false;
-								checkerOutput.append("(" + rowList.get(i) + "," + colList.get(i) 
-								+ ") conflicts with (" + rowList.get(j) + "," + colList.get(j)
-								+ ")\n");
+								checkerOutput.append("(" + (rowList.get(i) + 1) + "," + (colList.get(i) 
+										+ 1) + ") conflicts with (" + (rowList.get(j) + 1) + "," + (colList.get(j)
+												+ 1) + ")\n");
 								gridArray[rowList.get(i)][colList.get(j)].setIcon(badQueenIcon);
 							}
 							//Checks for column conflicts
 							if(colList.get(i).compareTo(colList.get(j)) == 0 && (i != j)){
 								colCheck = false;
-								checkerOutput.append("(" + rowList.get(i) + "," + colList.get(i) 
-								+ ") conflicts with (" + rowList.get(j) + "," + colList.get(j)
-								+ ")\n");
+								checkerOutput.append("(" + (rowList.get(i) + 1) + "," + (colList.get(i) 
+										+ 1) + ") conflicts with (" + (rowList.get(j) + 1) + "," + (colList.get(j)
+												+ 1) + ")\n");
 
 								gridArray[rowList.get(i)][colList.get(j)].setIcon(badQueenIcon);
 							}
@@ -158,31 +169,28 @@ public class MainFrame extends JFrame {
 							if(Math.abs(rowList.get(i) - rowList.get(j)) == 
 									Math.abs(colList.get(i) - colList.get(j)) && (i != j)){
 								diaCheck = false;
-								checkerOutput.append("(" + rowList.get(i) + "," + colList.get(i) 
-								+ ") conflicts with (" + rowList.get(j) + "," + colList.get(j)
-								+ ")\n");
-								System.out.println(rowList.get(i) + " " + colList.get(j));
+								checkerOutput.append("(" + (rowList.get(i) + 1) + "," + (colList.get(i) 
+										+ 1) + ") conflicts with (" + (rowList.get(j) + 1) + "," + (colList.get(j)
+												+ 1) + ")\n");
 								gridArray[rowList.get(i)][colList.get(i)].setIcon(badQueenIcon);
 
 							}
 						}
 					}
 					if(rowCheck && colCheck && diaCheck){
-						checkerOutput.setText("THAT IS CORRECT!");
+						checkerOutput.setText("THAT IS CORRECT FOR " + queens + " QUEENS");
 					}
 				}else{
 					checkerOutput.setText("Please use only 8 or less queens!");
 				}
-				
+
 			}
 		};
 		checkSolution.addActionListener(checkListener);
 
-
-
-
 		gridArray = new JToggleButton[8][8];
 
+		//Action listener for selecting where to put queens
 		ActionListener boardListener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
@@ -225,5 +233,65 @@ public class MainFrame extends JFrame {
 			}
 		}
 
+		//Creates a tip button for tips
+		JButton tipButton = new JButton("Tip");
+		tipButton.setBounds(625, 372, 140, 60);
+		contentPane.add(tipButton);
+
+		//Actions for tip button
+		ActionListener tipListener = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+
+				ArrayList<Integer> rowFlag = new ArrayList<Integer>();
+				ArrayList<Integer> colFlag = new ArrayList<Integer>();
+				ArrayList<Integer> potRow = new ArrayList<Integer>();
+				ArrayList<Integer> potCol = new ArrayList<Integer>();
+
+				int tipRow = -1;
+				int tipCol = -1;
+
+				boolean found = false;
+
+				if(queens < 8 && queens != 0){
+					checkerOutput.setText("Tip:\n");
+
+					//Checks all the currently marked spots
+					for (int row = 0; row < gridArray.length; row++) {
+						for (int col = 0; col < gridArray[row].length; col++) {
+							if(gridArray[row][col].isSelected()){
+								rowFlag.add(row);
+								colFlag.add(col);
+							}
+						}
+					}
+
+					//Checks for potential row and column spots
+					for (int row = 0; row < gridArray.length; row++) {
+						for (int col = 0; col < gridArray[row].length; col++) {
+							if(!(rowFlag.contains(row)) && !(colFlag.contains(col))){
+								potRow.add(row);
+								potCol.add(col);
+							}
+						}
+					}
+					//Checks diagonals 
+					for (int i = 0; i < rowFlag.size(); i++) {
+						for (int j = 0; j < potRow.size(); j++) {
+							if(Math.abs(rowFlag.get(i) - potRow.get(j)) != Math.abs(colFlag.get(i) - potCol.get(j))){
+								tipRow = potRow.get(j);
+								tipCol = potCol.get(j);
+							}
+						}
+					}
+					checkerOutput.append("(" + (tipRow + 1) + "," + (tipCol + 1) + ")");
+				}else if(queens == 0){
+					checkerOutput.setText("Please place an intial queen!");
+				}else{
+					checkerOutput.setText("Already have 8 queens!");
+				}
+			}
+		};
+		tipButton.addActionListener(tipListener);
 	}
 }
