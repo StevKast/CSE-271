@@ -1,6 +1,5 @@
 package edu.miamioh.kastsm;
 
-
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -293,5 +292,5 @@ public class MainFrame extends JFrame {
 			}
 		};
 		tipButton.addActionListener(tipListener);
-	}
-}
+	}//end mainFrame
+}//end class
