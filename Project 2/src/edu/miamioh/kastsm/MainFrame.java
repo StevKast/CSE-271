@@ -52,13 +52,13 @@ public class MainFrame extends JFrame {
 	 */
 	public MainFrame() {
 		setBackground(Color.WHITE);
-		setResizable(false);
 		setTitle("N-Queens Problem\r\n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		setResizable(false);
 		contentPane.setLayout(null);
 
 		//Welcome title for main panel
@@ -82,7 +82,7 @@ public class MainFrame extends JFrame {
 		countPanel.setLocation(32, 431);
 		contentPane.add(countPanel);
 		countPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		JLabel lblNumberOfQueens = new JLabel("Current Number of Placed Queens: ");
+		JLabel lblNumberOfQueens = new JLabel("Placed Queens: ");
 		countPanel.add(lblNumberOfQueens);
 		countPanel.setSize(350, 30);
 		currentQueens = new JTextField();
@@ -124,12 +124,12 @@ public class MainFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 
-				ArrayList<Integer> rowList = new ArrayList<Integer>();
-				ArrayList<Integer> colList = new ArrayList<Integer>();
-
 				boolean rowCheck = true;
 				boolean colCheck = true;
 				boolean diaCheck = true;
+				
+				ArrayList<Integer> rowList = new ArrayList<Integer>();
+				ArrayList<Integer> colList = new ArrayList<Integer>();
 
 				if(queens <= 8){
 					for (int row = 0; row < gridArray.length; row++) {
